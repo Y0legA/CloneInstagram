@@ -54,7 +54,8 @@ final class InstagrammViewController: UIViewController {
     }
 }
 
-extension InstagrammViewController: UITableViewDelegate, UITableViewDataSource {
+// UITableViewDataSource
+extension InstagrammViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         cells.count
     }
@@ -84,3 +85,6 @@ extension InstagrammViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {  return Constants.types[indexPath.section]
     }
 }
+
+// UITableViewDelegate
+extension InstagrammViewController: UITableViewDelegate {}
