@@ -7,26 +7,32 @@
 
 import UIKit
 
-// Экран инстаграмма
+// Домашний экран
 final class InstagrammViewController: UIViewController {
-    enum Constants {
-        enum Cell: String {
-            case stories = "storiesTableViewCell"
-            case post = "postTableViewCell"
-            case recommended = "recommendedTableViewCell"
-            case lastPost = "lastPostTableViewCell"
-        }
-        static let types: [CGFloat] = [130, 650, 400, 400]
+    enum TableCellTypes {
+        case stories
+        case startPost
+        case recommended
+        case posts
     }
     
+    enum CellIdentifiers: String {
+        case storiesCell = "storiesTableViewCell"
+        case postCell = "postTableViewCell"
+        case recommendedCell = "recommendedTableViewCell"
+    }
+
     // MARK: - Private IBoutlet
     @IBOutlet private weak var storiesTableView: UITableView!
     
     // MARK: - Private Visual Components
     private var refreshControl = UIRefreshControl()
 
+    // MARK: - Public Properties
+    private var posts: [TableCellTypes] = []
+    
     // MARK: - Private Properties
-    private var cells: [Constants.Cell] = [.stories, .post, .recommended, .lastPost]
+    private var cells: [TableCellTypes] = [.stories, .startPost, .recommended, .posts]
   
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -50,7 +56,12 @@ final class InstagrammViewController: UIViewController {
     private func configureUI() {
         storiesTableView.delegate = self
         storiesTableView.dataSource = self
+        generatePosts()
         upload()
+    }
+    
+    private func generatePosts() {
+        posts = [TableCellTypes.startPost, TableCellTypes.startPost, TableCellTypes.startPost]
     }
 }
 
@@ -61,30 +72,38 @@ extension InstagrammViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        let cellType = cells[section]
+        switch cellType {
+        case .startPost :
+            return 1
+        case .stories:
+            return 1
+        case .recommended:
+            return 1
+        case .posts:
+            return posts.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let typeCell = cells[indexPath.section]
-        switch typeCell {
+        let cellType = cells[indexPath.section]
+        switch cellType {
         case .stories:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.stories.rawValue) ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.storiesCell.rawValue) ?? UITableViewCell()
             return cell
-        case .post:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.post.rawValue) ?? UITableViewCell()
+        case .startPost, .posts:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.postCell.rawValue) ?? UITableViewCell()
             return cell
         case .recommended:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.recommended.rawValue) ?? UITableViewCell()
-            return cell
-        case .lastPost:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.lastPost.rawValue) ??  UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.recommendedCell.rawValue) ?? UITableViewCell()
             return cell
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {  return Constants.types[indexPath.section]
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {  return UITableView.automaticDimension
     }
 }
 
 // UITableViewDelegate
-extension InstagrammViewController: UITableViewDelegate {}
+extension InstagrammViewController: UITableViewDelegate {
+}
