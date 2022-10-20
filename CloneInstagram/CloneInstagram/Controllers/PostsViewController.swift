@@ -8,38 +8,38 @@
 import UIKit
 
 // Домашний экран
-final class InstagrammViewController: UIViewController {
-    enum TableCellTypes {
+final class PostsViewController: UIViewController {
+    private enum TableCellTypes {
         case stories
         case startPost
         case recommended
         case posts
     }
     
-    enum CellIdentifiers: String {
+    private enum CellIdentifiers: String {
         case storiesCell = "storiesTableViewCell"
         case postCell = "postTableViewCell"
         case recommendedCell = "recommendedTableViewCell"
     }
-
+    
     // MARK: - Private IBoutlet
     @IBOutlet private weak var storiesTableView: UITableView!
     
     // MARK: - Private Visual Components
     private var refreshControl = UIRefreshControl()
-
+    
     // MARK: - Public Properties
-    private var posts: [TableCellTypes] = []
+    private var posts: [TableCellTypes] = [TableCellTypes.startPost, TableCellTypes.startPost, TableCellTypes.startPost]
     
     // MARK: - Private Properties
-    private var cells: [TableCellTypes] = [.stories, .startPost, .recommended, .posts]
-  
+    private var cellTypes: [TableCellTypes] = [.stories, .startPost, .recommended, .posts]
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
-
+    
     // MARK: - Private IBAction
     @objc private func uploadDataAction() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -48,7 +48,7 @@ final class InstagrammViewController: UIViewController {
         }
     }
     // MARK: - Private Methods
-    private func upload() {
+    private func setupRefreshcontrol() {
         refreshControl.addTarget(self, action: #selector(uploadDataAction), for: .valueChanged)
         storiesTableView.refreshControl = refreshControl
     }
@@ -56,25 +56,20 @@ final class InstagrammViewController: UIViewController {
     private func configureUI() {
         storiesTableView.delegate = self
         storiesTableView.dataSource = self
-        generatePosts()
-        upload()
-    }
-    
-    private func generatePosts() {
-        posts = [TableCellTypes.startPost, TableCellTypes.startPost, TableCellTypes.startPost]
+        setupRefreshcontrol()
     }
 }
 
 // UITableViewDataSource
-extension InstagrammViewController: UITableViewDataSource {
+extension PostsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        cells.count
+        cellTypes.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellType = cells[section]
+        let cellType = cellTypes[section]
         switch cellType {
-        case .startPost :
+        case .startPost:
             return 1
         case .stories:
             return 1
@@ -86,24 +81,27 @@ extension InstagrammViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellType = cells[indexPath.section]
+        let cellType = cellTypes[indexPath.section]
         switch cellType {
         case .stories:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.storiesCell.rawValue) ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.storiesCell.rawValue)
+            ?? UITableViewCell()
             return cell
         case .startPost, .posts:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.postCell.rawValue) ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.postCell.rawValue)
+            ?? UITableViewCell()
             return cell
         case .recommended:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.recommendedCell.rawValue) ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.recommendedCell.rawValue)
+            ?? UITableViewCell()
             return cell
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {  return UITableView.automaticDimension
     }
 }
 
 // UITableViewDelegate
-extension InstagrammViewController: UITableViewDelegate {
+extension PostsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
+    CGFloat {  return UITableView.automaticDimension
+    }
 }
