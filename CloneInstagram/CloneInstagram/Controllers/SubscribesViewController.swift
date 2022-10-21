@@ -26,7 +26,7 @@ final class SubscribesViewController: UIViewController {
     private var refreshControl = UIRefreshControl()
     
     // MARK: - Public Properties
-    var data: [[Subscribe]] = [[]]
+    var datas: [[Subscribe]] = [[]]
     
     // MARK: - Private Properties
     private let cellTypes: [TableSectionsTypes] = [.today, .week, .month]
@@ -44,6 +44,7 @@ final class SubscribesViewController: UIViewController {
     @objc private func uploadDataAction() {
         refreshControl.endRefreshing()
     }
+    
     // MARK: - Private Methods
     private func setupRefreshcontrol() {
         refreshControl.addTarget(self, action: #selector(uploadDataAction), for: .valueChanged)
@@ -54,7 +55,7 @@ final class SubscribesViewController: UIViewController {
         subscribesTableView.delegate = self
         subscribesTableView.dataSource = self
         subscribesTableView.rowHeight = UITableView.automaticDimension
-        data = [todayPosts, weekPosts, monthPosts]
+        datas = [todayPosts, weekPosts, monthPosts]
         setupRefreshcontrol()
     }
 }
@@ -80,9 +81,13 @@ extension SubscribesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.subscribeCell)
                 as? SubscribeTableViewCell else { return UITableViewCell() }
-        let model = data[indexPath.section][indexPath.row]
+        let model = datas[indexPath.section][indexPath.row]
         cell.configureData(model)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        30
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -12,6 +12,7 @@ final class SubscribeTableViewCell: UITableViewCell {
     private enum Constant {
         static let emptyString = ""
         static let subscribe = "Вы подписаны"
+        static let system = "System Semibold"
     }
     
     // MARK: - Private IBoutlet
@@ -26,14 +27,14 @@ final class SubscribeTableViewCell: UITableViewCell {
     private var time = Constant.emptyString
     private var comment = Constant.emptyString
     private var author = Constant.emptyString
-
+    
     // MARK: - Public Methods
     func configureData(_ model: Subscribe) {
         commentAuthorAvatarImageView.image = UIImage(named: model.commentAuthorAvatarImageName)
         author = model.commentAuthorAvatarImageName
         time = model.passedTime
         comment = model.commentText
-        commentLabel.attributedText = setupDeliveryDateLabel()
+        commentLabel.attributedText = setupDeliveryDateLabel(author, comment, time)
         guard let subscribe = model.isSubscribe else {
             commentImageView.image = UIImage(named: model.postImageName)
             guard model.isReaction else { return }
@@ -42,46 +43,25 @@ final class SubscribeTableViewCell: UITableViewCell {
             answerButton.isHidden = false
             return
         }
-        commentLabel.translatesAutoresizingMaskIntoConstraints = false
-        commentLabel.widthAnchor.constraint(equalToConstant: subscriptionButton.bounds.width).isActive = true
-        commentImageView.frame.size.width = subscriptionButton.frame.width
+        configureCommentLabel()
         subscriptionButton.isHidden = false
-            if subscribe {
-                subscriptionButton.setTitle(Constant.subscribe, for: .normal)
-                subscriptionButton.backgroundColor = .clear
-                subscriptionButton.layer.borderColor = UIColor.lightGray.cgColor
-                subscriptionButton.layer.borderWidth = 1
-            }
-    }
-    
-    // MARK: - Private IBAction
-    @IBAction private func answerAction() {
+        if subscribe {
+            configureSubscriptionButton()
+        }
     }
     
     // MARK: - Private Methods
-    // Метод для форматирования строки
-    private func setupDeliveryDateLabel() -> NSMutableAttributedString {
-        let myMutableString = NSMutableAttributedString(string: "\(author) \(comment)  \(time)")
-        myMutableString.addAttribute(
-            NSAttributedString.Key.font,
-            value: UIFont.systemFont(ofSize: 20, weight: .bold),
-            range: NSRange(location: 0, length: author.count)
-        )
-        myMutableString.addAttribute(
-            NSAttributedString.Key.font,
-            value: UIFont.systemFont(ofSize: 17, weight: .semibold),
-            range: NSRange(location: author.count, length: comment.count)
-        )
-        myMutableString.addAttribute(
-            NSAttributedString.Key.font,
-            value: UIFont.systemFont(ofSize: 16, weight: .regular),
-            range: NSRange(location: comment.count + 1, length: time.count)
-        )
-        myMutableString.addAttribute(
-            NSAttributedString.Key.foregroundColor,
-            value: UIColor.lightGray,
-            range: NSRange(location: author.count + comment.count + 1, length: time.count)
-        )
-        return myMutableString
+    
+    private func configureCommentLabel() {
+        commentLabel.translatesAutoresizingMaskIntoConstraints = false
+        commentLabel.widthAnchor.constraint(equalToConstant: subscriptionButton.bounds.width).isActive = true
+        commentImageView.frame.size.width = subscriptionButton.frame.width
+    }
+    
+    private func configureSubscriptionButton() {
+        subscriptionButton.setTitle(Constant.subscribe, for: .normal)
+        subscriptionButton.backgroundColor = .clear
+        subscriptionButton.layer.borderColor = UIColor.lightGray.cgColor
+        subscriptionButton.layer.borderWidth = 0.2
     }
 }
