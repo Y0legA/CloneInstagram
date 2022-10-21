@@ -50,7 +50,6 @@ final class SubscribeHeaderView: UIView {
     init(frame: CGRect = .zero, type: HeaderType) {
         self.type = type
         super.init(frame: frame)
-        headerLabel.text = type.title
         configureUI()
     }
     
@@ -60,11 +59,13 @@ final class SubscribeHeaderView: UIView {
     
     // MARK: - LifeCycle
     override func layoutSubviews() {
-        headerLabel.frame = CGRect(origin: CGPoint(x: bounds.minX + 16, y: 0), size: bounds.size)
+        headerLabel.frame = CGRect(origin: CGPoint(x: bounds.minX + 16, y: 0),
+                                   size: CGSize(width: bounds.width / 2, height: bounds.height / 2))
     }
  
     // MARK: - Private Methods
     private func configureUI() {
+        headerLabel.text = type.title
         addSubview(headerLabel)
     }
 }

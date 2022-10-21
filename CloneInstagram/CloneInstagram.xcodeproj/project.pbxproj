@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840AA1A42902C2D000B0B023 /* Extention+SubscriveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AA1A32902C2D000B0B023 /* Extention+SubscriveTableViewCell.swift */; };
 		842BDC5B290057D200AAA896 /* SubscribesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDC5A290057D200AAA896 /* SubscribesViewController.swift */; };
 		842BDC692900615800AAA896 /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDC682900615800AAA896 /* SubscribeTableViewCell.swift */; };
 		843E56C82901A6C60037A374 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E56C72901A6C60037A374 /* Subscribe.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840AA1A32902C2D000B0B023 /* Extention+SubscriveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+SubscriveTableViewCell.swift"; sourceTree = "<group>"; };
 		842BDC5A290057D200AAA896 /* SubscribesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribesViewController.swift; sourceTree = "<group>"; };
 		842BDC682900615800AAA896 /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
 		843E56C72901A6C60037A374 /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				843E56C62901A6520037A374 /* Cells */,
 				843E56C92901A6CB0037A374 /* Models */,
 				843E56CA2901D2910037A374 /* testSubscribeData.swift */,
+				840AA1A32902C2D000B0B023 /* Extention+SubscriveTableViewCell.swift */,
 				84CD472A28FD6BA40078D134 /* Main.storyboard */,
 				84CD472D28FD6BA90078D134 /* Assets.xcassets */,
 				8493352428FED892007BA24F /* Colors.xcassets */,
@@ -214,6 +217,7 @@
 				84CD472928FD6BA40078D134 /* PostsViewController.swift in Sources */,
 				843E56C82901A6C60037A374 /* Subscribe.swift in Sources */,
 				84DE8BF829015F6800F44E74 /* SubscribeHeaderView.swift in Sources */,
+				840AA1A42902C2D000B0B023 /* Extention+SubscriveTableViewCell.swift in Sources */,
 				843E56CB2901D2910037A374 /* testSubscribeData.swift in Sources */,
 				842BDC5B290057D200AAA896 /* SubscribesViewController.swift in Sources */,
 				842BDC692900615800AAA896 /* SubscribeTableViewCell.swift in Sources */,
