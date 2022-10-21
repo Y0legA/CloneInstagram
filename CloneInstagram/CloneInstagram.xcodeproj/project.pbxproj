@@ -7,35 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842BDC5B290057D200AAA896 /* SubscribesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDC5A290057D200AAA896 /* SubscribesViewController.swift */; };
-		842BDC692900615800AAA896 /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BDC682900615800AAA896 /* SubscribeTableViewCell.swift */; };
-		843E56C82901A6C60037A374 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E56C72901A6C60037A374 /* Subscribe.swift */; };
-		843E56CB2901D2910037A374 /* testSubscribeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E56CA2901D2910037A374 /* testSubscribeData.swift */; };
 		8493352528FED892007BA24F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8493352428FED892007BA24F /* Colors.xcassets */; };
 		84CD472528FD6BA40078D134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD472428FD6BA40078D134 /* AppDelegate.swift */; };
 		84CD472728FD6BA40078D134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD472628FD6BA40078D134 /* SceneDelegate.swift */; };
-		84CD472928FD6BA40078D134 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD472828FD6BA40078D134 /* PostsViewController.swift */; };
+		84CD472928FD6BA40078D134 /* InstagrammViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD472828FD6BA40078D134 /* InstagrammViewController.swift */; };
 		84CD472C28FD6BA40078D134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CD472A28FD6BA40078D134 /* Main.storyboard */; };
 		84CD472E28FD6BA90078D134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CD472D28FD6BA90078D134 /* Assets.xcassets */; };
 		84CD473128FD6BA90078D134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CD472F28FD6BA90078D134 /* LaunchScreen.storyboard */; };
-		84DE8BF829015F6800F44E74 /* SubscribeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE8BF729015F6800F44E74 /* SubscribeHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		842BDC5A290057D200AAA896 /* SubscribesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribesViewController.swift; sourceTree = "<group>"; };
-		842BDC682900615800AAA896 /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
-		843E56C72901A6C60037A374 /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
-		843E56CA2901D2910037A374 /* testSubscribeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testSubscribeData.swift; sourceTree = "<group>"; };
 		8493352428FED892007BA24F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		84CD472128FD6BA40078D134 /* CloneInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloneInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CD472428FD6BA40078D134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CD472628FD6BA40078D134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84CD472828FD6BA40078D134 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		84CD472828FD6BA40078D134 /* InstagrammViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagrammViewController.swift; sourceTree = "<group>"; };
 		84CD472B28FD6BA40078D134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84CD472D28FD6BA90078D134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CD473028FD6BA90078D134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84CD473228FD6BA90078D134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84DE8BF729015F6800F44E74 /* SubscribeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,32 +39,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		842BDC5E29005BA500AAA896 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				84DE8BF229015DFF00F44E74 /* Headers */,
-				84CD472828FD6BA40078D134 /* PostsViewController.swift */,
-				842BDC5A290057D200AAA896 /* SubscribesViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		843E56C62901A6520037A374 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				842BDC682900615800AAA896 /* SubscribeTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		843E56C92901A6CB0037A374 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				843E56C72901A6C60037A374 /* Subscribe.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		84CD471828FD6BA40078D134 = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +60,7 @@
 			children = (
 				84CD472428FD6BA40078D134 /* AppDelegate.swift */,
 				84CD472628FD6BA40078D134 /* SceneDelegate.swift */,
-				842BDC5E29005BA500AAA896 /* Controllers */,
-				843E56C62901A6520037A374 /* Cells */,
-				843E56C92901A6CB0037A374 /* Models */,
-				843E56CA2901D2910037A374 /* testSubscribeData.swift */,
+				84CD472828FD6BA40078D134 /* InstagrammViewController.swift */,
 				84CD472A28FD6BA40078D134 /* Main.storyboard */,
 				84CD472D28FD6BA90078D134 /* Assets.xcassets */,
 				8493352428FED892007BA24F /* Colors.xcassets */,
@@ -107,14 +68,6 @@
 				84CD473228FD6BA90078D134 /* Info.plist */,
 			);
 			path = CloneInstagram;
-			sourceTree = "<group>";
-		};
-		84DE8BF229015DFF00F44E74 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				84DE8BF729015F6800F44E74 /* SubscribeHeaderView.swift */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +80,6 @@
 				84CD471D28FD6BA40078D134 /* Sources */,
 				84CD471E28FD6BA40078D134 /* Frameworks */,
 				84CD471F28FD6BA40078D134 /* Resources */,
-				84F28E872901EDC500BE0006 /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -185,38 +137,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		84F28E872901EDC500BE0006 /* Run SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftLint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		84CD471D28FD6BA40078D134 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CD472928FD6BA40078D134 /* PostsViewController.swift in Sources */,
-				843E56C82901A6C60037A374 /* Subscribe.swift in Sources */,
-				84DE8BF829015F6800F44E74 /* SubscribeHeaderView.swift in Sources */,
-				843E56CB2901D2910037A374 /* testSubscribeData.swift in Sources */,
-				842BDC5B290057D200AAA896 /* SubscribesViewController.swift in Sources */,
-				842BDC692900615800AAA896 /* SubscribeTableViewCell.swift in Sources */,
+				84CD472928FD6BA40078D134 /* InstagrammViewController.swift in Sources */,
 				84CD472528FD6BA40078D134 /* AppDelegate.swift in Sources */,
 				84CD472728FD6BA40078D134 /* SceneDelegate.swift in Sources */,
 			);
