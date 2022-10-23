@@ -8,7 +8,7 @@
 import Foundation
 
 // тестовый массив постов раздела подписок
-let onePost = Subscribe("doroty", "упомянул(-а) вас в комментарии: @momon спасибо", "heart", false, "post", "8ч", nil)
+let onePost = Subscribe("doroty", "упомянул(-а) вас в комментарии: @momon спасибо", "", false, "post", "8ч", nil)
 let twoPost = Subscribe("galina", "есть в инстаграмм, вы можете знать этого человека", "", true, "", "12ч", false)
 let threePost = Subscribe("xranitel", "понравился ваш комментарий: 'Ходят тут всякие...'",
                           "heart", true, "invaders", "20ч", nil)
