@@ -13,7 +13,7 @@ struct Subscribe {
     let commentText: String
     let reactionImageName: String
     let isReaction: Bool
-    let postImageName: String
+    let postImageName: String?
     let passedTime: String
     let isSubscribe: Bool?
     

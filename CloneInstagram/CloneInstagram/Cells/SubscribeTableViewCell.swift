@@ -36,7 +36,7 @@ final class SubscribeTableViewCell: UITableViewCell {
         comment = model.commentText
         commentLabel.attributedText = setupDeliveryDateLabel(author, comment, time)
         guard let subscribe = model.isSubscribe else {
-            commentImageView.image = UIImage(named: model.postImageName)
+            commentImageView.image = UIImage(named: model.postImageName ?? Constant.emptyString)
             guard model.isReaction else { return }
             reactionImageView.isHidden = false
             reactionImageView.image = UIImage(systemName: model.reactionImageName)
