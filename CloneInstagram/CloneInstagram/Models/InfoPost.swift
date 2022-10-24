@@ -9,11 +9,11 @@ import Foundation
 
 // Модель для подробной информации о посте
 struct InfoPost {
-    let nameImage: String?
-    let textPost: String?
+    let imageName: String?
+    let postName: String?
     
     init(_ name: String, _ text: String) {
-        nameImage = name
-        textPost = text
+        imageName = name
+        postName = text
     }
 }
