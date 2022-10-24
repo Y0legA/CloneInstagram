@@ -15,7 +15,7 @@ final class PostInfoCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Properties
     var imageView: InfoPost? {
         didSet {
-            postImageView.image = UIImage(named: imageView?.nameImage ?? "")
+            postImageView.image = UIImage(named: imageView?.imageName ?? "")
         }
     }
 }

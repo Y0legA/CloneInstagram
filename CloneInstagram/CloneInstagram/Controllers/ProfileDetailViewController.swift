@@ -10,10 +10,10 @@ import UIKit
 // Экран детальной информации
 final class ProfileDetailViewController: UIViewController {
     private enum Constants {
-        static let identifiers: [Identifiers] = [.profileSubscribeLikes, .profileInfoDetail, .actuality, .postInfo]
+        static let identifiers: [Identifier] = [.profileSubscribeLikes, .profileInfoDetail, .actuality, .postInfo]
     }
     
-    private enum Identifiers: String {
+    private enum Identifier: String {
         case profileSubscribeLikes = "profileSubscribeLikesTableViewCell"
         case profileInfoDetail = "profileInfoDetailTableViewCell"
         case actuality = "actualityInfoTableViewCell"
@@ -74,18 +74,17 @@ extension ProfileDetailViewController: UITableViewDataSource {
         let cellType = Constants.identifiers[indexPath.row]
         switch cellType {
         case .profileSubscribeLikes:
-            print(Identifiers.profileSubscribeLikes.rawValue)
             return tableView.dequeueReusableCell(withIdentifier:
-                                                    Identifiers.profileSubscribeLikes.rawValue, for: indexPath)
+                                                    Identifier.profileSubscribeLikes.rawValue, for: indexPath)
         case .profileInfoDetail:
             return tableView.dequeueReusableCell(withIdentifier:
-                                                    Identifiers.profileInfoDetail.rawValue, for: indexPath)
+                                                    Identifier.profileInfoDetail.rawValue, for: indexPath)
         case .actuality:
             return tableView.dequeueReusableCell(withIdentifier:
-                                                    Identifiers.actuality.rawValue, for: indexPath)
+                                                    Identifier.actuality.rawValue, for: indexPath)
         case .postInfo:
             return tableView.dequeueReusableCell(withIdentifier:
-                                                    Identifiers.postInfo.rawValue, for: indexPath)
+                                                    Identifier.postInfo.rawValue, for: indexPath)
         default:
             return UITableViewCell()
         }
@@ -107,7 +106,7 @@ extension ProfileDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier
-                                                         : Identifiers.postImageView.rawValue, for: indexPath)
+                                                         : Identifier.postImageView.rawValue, for: indexPath)
             as? PostInfoCollectionViewCell {
             cell.imageView = infoPosts[indexPath.row]
             return cell
